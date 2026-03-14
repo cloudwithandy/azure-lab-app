@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Azure Lab</title>
+</head>
+
+<body>
+<h1>Hello from Azure</h1>
+
+<button onclick="loadMessage()">Call Backend</button>
+
+<p id="result"></p>
+
+<script>
+async function loadMessage(){
+const response = await fetch('/api/hello');
+const data = await response.text();
+document.getElementById("result").innerText = data;
+}
+</script>
+
+</body>
+</html>
